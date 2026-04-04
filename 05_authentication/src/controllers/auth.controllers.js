@@ -56,7 +56,7 @@ async function registerUser(req, res) {
     }, process.env.JWT_SECRET);
 
 
-    res.cookie("cookie-token", token)
+    res.cookie("token", token)
 
 
     res.status(201).json({
