@@ -46,6 +46,27 @@ app.post("/notes", async (req,res)=>{
 })
 
 
+app.get("/notes", async (req,res)=>{
+
+    const existingTitle = await noteModel.findOne({
+        title:"demo_title_1"
+    });
+
+    res.status(200).json({
+        message:"Note Found Successfully!!",
+        title:existingTitle.title
+    })
+
+})
+
+
+
+//no need
+// app.delete("/notes/:id", async (req,res)=>{})
+// app.patch("/notes/:id", async (req,res)=>{})
+
+
+
 
 
 module.exports=app;

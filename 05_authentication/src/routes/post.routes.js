@@ -8,16 +8,10 @@ dotenv.config()
 
 const router = express.Router();
 
-
-
-
-
-
 router.post('/create', async (req, res) => {
     const token = req.cookies.token;
 
     console.log(token);
-
 
     if (!token) {
         return res.status(401).json({
@@ -41,12 +35,6 @@ router.post('/create', async (req, res) => {
             message: "Token is not valid!"
         })
     }
-
-
-
-
-
-
 
 
     // console.log(user);
